@@ -18,4 +18,3 @@ while true; do
     entr -cd sh -c 'git rm -r --cached . && git add . && git commit -m "updating" && git push origin @:master'
 done
 ```
-
