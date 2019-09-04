@@ -16,7 +16,7 @@ paths:
         schema:
           $ref: '#/definitions/User'
       responses:
-        201:
+        200:
           description: Successful
         403:
           description: Unsuccessful
