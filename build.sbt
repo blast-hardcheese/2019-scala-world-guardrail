@@ -1,5 +1,5 @@
 guardrailTasks in Compile := List(
-  ScalaClient(file("petstore.yaml"), imports=List("refined._"))
+  ScalaClient(file("petstore.yaml"))
 )
 
 val akkaVersion       = "10.0.14"
