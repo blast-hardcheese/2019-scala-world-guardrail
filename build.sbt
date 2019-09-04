@@ -1,6 +1,6 @@
 guardrailTasks in Compile := List(
   // ScalaClient(file("petstore.yaml")),
-  ScalaClient(file("petstore.yaml"), framework="endpoints"),
+  ScalaClient(file("petstore.yaml"), framework="http4s"),
   ScalaServer(file("petstore.yaml"))
 )
 
