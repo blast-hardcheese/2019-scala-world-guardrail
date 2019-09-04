@@ -70,7 +70,8 @@ definitions:
       - full_name
     properties:
       id:
-        type: string
+        type: integer
+        format: int64
       full_name:
         type: string
       nickname:
