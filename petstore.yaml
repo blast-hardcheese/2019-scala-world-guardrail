@@ -6,7 +6,7 @@ info:
 host: "petstore.swagger.io"
 basePath: "/v2"
 paths:
-  x-jvm-package: examples.user
+  x-jvm-package: examples.petstore
   /user:
     post:
       operationId: createUser
