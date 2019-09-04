@@ -30,7 +30,13 @@ object Foo extends App {
   val route = UserResource.routes(handler)
   val bindingFuture = Http().bindAndHandle(route, "localhost", 8080)
 
-	val client = UserClient.httpClient(Route.asyncHandler(route))
+	val client = UserClient.httpClient({ req: HttpRequest =>
+    for {
+      strict <- req.toStrict(10.seconds)
+      () = println(strict)
+      resp <- Route.asyncHandler(route).apply(strict)
+    } yield resp
+  })
 
   case class ErrorModel(message: String)
 
