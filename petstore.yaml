@@ -41,6 +41,7 @@ paths:
             type: string
   /user/{id}/friends:
     get:
+      operationId: getUserFriends
       parameters:
       - in: path
         required: true
