@@ -1,0 +1,76 @@
+swagger: "2.0"
+info:
+  description: "Just a simple API to manage users"
+  version: "1.0.0"
+  title: "User management API"
+host: "petstore.swagger.io"
+basePath: "/v2"
+paths:
+  /user:
+    post:
+      operationId: createUser
+      parameters:
+      - in: body
+        name: user
+        schema:
+          $ref: '#/definitions/User'
+      responses:
+        201:
+          description: Successful
+        403:
+          description: Unsuccessful
+  /user/{id}:
+    get:
+      operationId: getUser
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        required: true
+        name: id
+        type: integer
+        format: int64
+      responses:
+        200:
+          description: Successful
+          schema:
+            $ref: '#/definitions/User'
+        404:
+          description: Unsuccessful
+          schema:
+            type: string
+  /user/{id}/friends:
+    get:
+      parameters:
+      - in: path
+        required: true
+        name: id
+        type: integer
+        format: int64
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: integer
+              format: int64
+        404:
+          description: Unsuccessful
+definitions:
+  User:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      full_name:
+        type: string
+      nickname:
+        type: string
+      date_joined:
+        type: string
+        format: date-time
+      date_modified:
+        type: string
+        format: date-time
