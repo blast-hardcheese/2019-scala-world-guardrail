@@ -64,6 +64,8 @@ paths:
 definitions:
   User:
     type: object
+    required:
+      - full_name
     properties:
       id:
         type: integer
