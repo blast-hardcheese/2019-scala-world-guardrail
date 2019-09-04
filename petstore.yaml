@@ -9,7 +9,7 @@ paths:
   /user:
     post:
       operationId: createUser
-      x-jvm-package: examples.petstore
+      x-jvm-package: examples.user
       parameters:
       - in: body
         name: user
@@ -23,6 +23,7 @@ paths:
   /user/{id}:
     get:
       operationId: getUser
+      x-jvm-package: examples.user
       produces:
       - application/json
       parameters:
@@ -43,6 +44,7 @@ paths:
   /user/{id}/friends:
     get:
       operationId: getUserFriends
+      x-jvm-package: examples.friends
       parameters:
       - in: path
         required: true
