@@ -72,7 +72,7 @@ definitions:
         format: int64
       full_name:
         type: string
-        x-scala-type: String @@ NotEmpty
+        x-scala-type: se.hardchee.NonEmptyThing[String]
       nickname:
         type: string
       date_joined:
