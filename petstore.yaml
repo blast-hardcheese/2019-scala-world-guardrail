@@ -18,6 +18,8 @@ paths:
       responses:
         200:
           description: Successful
+          schema:
+            $ref: '#/definitions/User'
         403:
           description: Unsuccessful
   /user/{id}:

@@ -13,7 +13,7 @@ object Foo extends App {
     def createUser(respond: UserResource.createUserResponse.type
       )(body: Option[User]
       ): Future[UserResource.createUserResponse] = {
-        Future.successful(respond.Created)
+        Future.successful(respond.OK)
     }
 
     def getUser(respond: UserResource.getUserResponse.type
